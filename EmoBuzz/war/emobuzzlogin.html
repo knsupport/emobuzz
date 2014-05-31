@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link rel="stylesheet" href="/css/bootstrap-responsive.css">
+</head>
+<body>
+	<div class="container">&nbsp;</div>
+	<div class="pagination-centered">
+		<div>
+			<form class="form-horizontal" action="/demo1.jsp" method="get" onsubmit="return ebValidate();">
+				<div class="control-group">
+					<div class="controls" style="margin: 0;">
+						<input type="email" id="emailId" class="input" name="email" placeholder="Email">
+						<button class="btn btn-info" type="submit">Login</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	function ebValidate() {
+		var email = document.getElementById("emailId").value;
+		if (email == null || email == undefined || email == "") {
+			alert("Enter Email Id");
+			return false;
+		}
+	}
+</script>
+</html>
