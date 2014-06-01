@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Login</title>
+	<title>EmoBuzz Login</title>
 	<link rel="stylesheet" href="/css/bootstrap.css">
 	<link rel="stylesheet" href="/css/bootstrap-responsive.css">
 	
@@ -57,7 +57,7 @@
 								<input type="hidden" class="input" name="u" value="<%=url%>"/>
 
 								<input type="email" id="emailId" class="input" name="email" placeholder="Email">
-								<button class="btn btn-info" id="login" type="submit">Login</button>
+								<button class="btn btn-info" id="login" type="submit">EmoBuzz Login</button>
 							</div>
 						</div>
 					</form>

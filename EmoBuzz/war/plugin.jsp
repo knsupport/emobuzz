@@ -57,8 +57,8 @@
 	#msg-close {
 		cursor: pointer;
 		border: 1px solid;
-		padding-left: 2px;
-		padding-right: 2px
+		padding: 5px;
+		margin-left: 8px;
 	}
 </style>
 </head>
