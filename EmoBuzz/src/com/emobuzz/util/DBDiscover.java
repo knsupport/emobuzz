@@ -125,7 +125,7 @@ public class DBDiscover {
 			userString=userString+" && emoId =="+emoId;
 		}
 		Query query = pm.newQuery("select DISTINCT contentId, emotionName, emoId from " +EmotionTagged.class.getName()+ " where "+userString);
-		
+		query.setOrdering("emotionTagId desc");
 		List<Object[]> followersList = (List<Object[]>) query.execute();
 		pm.close();
 		
@@ -144,7 +144,7 @@ public class DBDiscover {
 			queryStr = discoverContent+" from " +ContentDetails.class.getName()+" where majorEmoCount>0 && majorEmoName=='"+emoId+"'";
 		}
 		Query query =  pm.newQuery(queryStr);
-		query.setOrdering("majorEmoCount desc");
+		query.setOrdering("cid desc");
 		List<Object[]> contentList= null;
 		try {
 			contentList = (List<Object[]>) query.execute();

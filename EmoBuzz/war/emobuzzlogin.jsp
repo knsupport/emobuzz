@@ -44,7 +44,7 @@
 			String url = request.getParameter("u");
 %>
 			<div class="container pagination-centered">
-				<h3 style="margin-bottom: 0;">Login</h3>
+				<h3 style="margin-bottom: 0;">EmoBuzz Login</h3>
 			</div>
 			<hr style="margin-bottom: 18px;">
 			<div class="pagination-centered">
@@ -57,7 +57,7 @@
 								<input type="hidden" class="input" name="u" value="<%=url%>"/>
 
 								<input type="email" id="emailId" class="input" name="email" placeholder="Email">
-								<button class="btn btn-info" id="login" type="submit">EmoBuzz Login</button>
+								<button class="btn btn-info" id="login" type="submit">Login</button>
 							</div>
 						</div>
 					</form>
