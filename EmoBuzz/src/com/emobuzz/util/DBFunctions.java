@@ -373,9 +373,9 @@ public class DBFunctions {
 		Long id=1L;
 		
 		id=generatepk("select fId from " + Followers.class.getName(), id, "fId");
-		followers.setUid(followerDTO.getFollowerId());
+		followers.setFollowerId(followerDTO.getFollowerId());
 		followers.setUid(followerDTO.getUid());
-		
+		followers.setfId(id);
 		
 		Key key = KeyFactory.createKey(Followers.class.getSimpleName(), id);
 		followers.setKey(key);

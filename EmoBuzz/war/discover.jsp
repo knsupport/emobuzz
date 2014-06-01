@@ -112,7 +112,7 @@ DBFunctions dbFun=new DBFunctions();
 							}
 							
 							%>
-							<a class="emo-tag <%=active %>" emo-name="All" emo-id="0" href="/discover.jsp<%=uidParam%>">
+							<a class="emo-tag <%=active %>" emo-name="All" emo-id="0" href="/discover<%=uidParam%>">
 								All Emotions
 							</a>
 							<%
@@ -137,7 +137,7 @@ DBFunctions dbFun=new DBFunctions();
 				</div>
 				<select onchange="location=this.options[this.selectedIndex].value;" class="camel-case" id="emo-select">
 				
-				<option value="/discover.jsp" selected>All</option>
+				<option value="/discover" selected>All</option>
 					<%=mobile %>
 				</select>
 			</div>

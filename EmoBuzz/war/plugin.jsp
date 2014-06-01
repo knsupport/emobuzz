@@ -35,7 +35,7 @@
 	}
 
 	.emo-span {
-		width: 12%;
+		min-width: 40px;
 		display: inline-block;
 		padding: 10px;
 		cursor: pointer;
@@ -47,7 +47,7 @@
 	}
 
 	.emo-name {
-		margin-top: 10px;
+		margin: 0;
 	}
 	
 	#emo-msg-div {
@@ -70,9 +70,6 @@
 		title = "Untitled";
 	}
 	String url = request.getParameter("u");
-	
-	/* System.out.println("title = " + title + "\n" + "url = " + url);
-	System.out.println("-------------------------------------------------------------------"); */
 %>
 <div id="emo-holder">
 	<%
@@ -82,21 +79,15 @@
 	%>
 			<div class="emo-span" id="<%=i%>" onclick="tagContent('<%=emoId%>', '<%=emoName%>')">
 				<img src="<%=emotionHandler.getEmotionImgBase64(emoId)%>">
-				<span class="emo-name"><%=emoName %></span>
+				<div class="emo-name"><%=emoName %></div>
 			</div>
 	<%
 		}
 	%>
-
-	<!-- <label class="kk" onclick="tagContent('Awesome')">Awesome</label>
-	<label class="kk" onclick="tagContent('Love')">Inspiring</label>
-	<label class="kk" onclick="tagContent('Like')">Like</label>
-	<label class="kk" onclick="tagContent('Bad')">Dislike</label> -->
-	
 	<img id="load-img" src="/img/loading.gif" style="display:none;position: absolute;right: 46%;top: 20%;">
 </div>
 <div id="emo-msg-div" style="display:none;">
-	<span id="emo-msg"></span>
+	<span id="emo-msg" style="font-size: 1.17em;font-weight: bold;"></span>
 	<span id="msg-close" onclick="hideMsg()">x</span>
 </div>
 <div>
@@ -105,7 +96,7 @@
 		if(userDTO!=null)
 			param = "?u="+userDTO.getUid();
 	%>
-	<a target="_blank" href="/discover.jsp<%=param%>" >View My Clicks</a>
+	<a target="_blank" href="/discover<%=param%>" >View My Clicks</a>
 </div>
 </body>
 <script>
@@ -127,20 +118,16 @@
 		xmlhttp.send();
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-				// alert(xmlhttp.responseText);
-				// alert("Tagged Successfully");
 				eHolderEle.style.display = "none";
 				eHolderEle.style.opacity = "";
 				eImgEle.style.display="none";
-				
+
 				eMsgEle.style.display = "";
 				document.getElementById("emo-msg").innerHTML = xmlhttp.responseText;
-				
-				
 			}
 		}
 	}
-	
+
 	function hideMsg() {
 		eMsgEle.style.display = "none";
 		eHolderEle.style.display = "";
@@ -154,23 +141,38 @@
 		host = "https://emoobuzz.appspot.com";
 	}
 
-	var ef = d.createElement('iframe');
-	ef.src = host+'/plugin.jsp';
-	ef.style.height = "100%";
-	ef.style.width = "100%";
-	ef.style.border = "none";
+	var ef=d.createElement('iframe');
+	var efs=ef.style;
+	ef.src=host+'/plugin.jsp?t='+encodeURIComponent(document.title)+'&u='+encodeURIComponent(window.location);
+	efs.height='100%';
+	efs.width='100%';
+	efs.border='none';
+	
+	var edSp=d.createElement('span');
+	edSp.onclick=function(){var e=d.getElementById('eDiv');e.parentNode.removeChild(e);};
+	edSp.innerHTML='X';
+	
+	var edSps=edSp.style;
+	edSps.position='absolute';
+	edSps.right='20px';
+	edSps.top='7px';
+	edSps.cursor='pointer';
+	edSps.textDecoration='underline';
 
-	var ed = d.createElement('div');
-	ed.style.position = "fixed";
-	ed.style.left = "0";
-	ed.style.right = "0";
-	ed.style.top = "0";
-	ed.style.maxWidth = "500px";
-	ed.style.height = "25%";
-	ed.style.zIndex = "1999999999";
-	ed.style.backgroundColor = "#F7F7F7";
+	var ed=d.createElement('div');
+	ed.id='eDiv';
+	var eds=ed.style;
+	eds.position='fixed';
+	eds.left='0';
+	eds.right='0';
+	eds.top='0';
+	eds.maxWidth='385px';
+	eds.height='160px';
+	eds.zIndex='1999999999';
+	eds.backgroundColor='#F7F7F7';
 
 	ed.appendChild(ef);
+	ed.appendChild(edSp);
 	d.getElementsByTagName('body')[0].appendChild(ed);
 })(); --%>
 <!-- edSp.onclick = function(){edSp.parentNode.removeChild();}; -->
@@ -191,7 +193,8 @@
 	
 	var edSps=edSp.style;
 	edSps.position='absolute';
-	edSps.right='10px';
+	edSps.right='20px';
+	edSps.top='7px';
 	edSps.cursor='pointer';
 	edSps.textDecoration='underline';
 
@@ -202,8 +205,8 @@
 	eds.left='0';
 	eds.right='0';
 	eds.top='0';
-	eds.maxWidth='500px';
-	eds.height='25%';
+	eds.maxWidth='385px';
+	eds.height='160px';
 	eds.zIndex='1999999999';
 	eds.backgroundColor='#F7F7F7';
 

@@ -14,6 +14,7 @@ import com.google.appengine.api.datastore.Text;
 
 public class DBDiscover {
 	
+	@SuppressWarnings("unchecked")
 	public final List<Long> getDiscoverEmotion(){
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		String queryStr = "select DISTINCT eid from " +ContentEmotionsMap.class.getName();
@@ -30,6 +31,7 @@ public class DBDiscover {
 		return contentList;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public final List<Long> getUserEmotion(String uid){
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		String queryStr = "select DISTINCT emoId from " +EmotionTagged.class.getName()+" where userId=="+uid;
@@ -45,7 +47,7 @@ public class DBDiscover {
 		return contentList;
 	}
 	
-	private static String discoverContent = "select title,majorEmoId,majorEmoCount,embedData,totalFeedbackCount";
+	private static String discoverContent = "select title,majorEmoId,majorEmoCount,embedData,totalFeedbackCount,url,cid";
 	private ContentDetailsDTO getDtoForArray(Object[] obj){
 		
 		ContentDetailsDTO contDto = new ContentDetailsDTO();
@@ -57,7 +59,7 @@ public class DBDiscover {
 			contDto.setEmbedData(text.getValue());
 		}
 		contDto.setTotalFeedbackCount(obj[4]!=null?(Long) obj[4]:null);
-		
+		contDto.setUrl(obj[5]!=null?(String) obj[5]:null);
 		return contDto;
 	}
 	
@@ -70,13 +72,14 @@ public class DBDiscover {
 			emoId = Integer.parseInt(emoIdStr);
 		}
 		
-		List<Object> contentIdList = getUserData(userId, emoId);
+		List<Object[]> contentIdList = getUserData(userId, emoId);
 		
 		if(!contentIdList.isEmpty()){
 			StringBuffer contentWhere = new StringBuffer();
 			
-			for (Object object : contentIdList) {
-				contentWhere.append("|| cid=="+object.toString());
+			for (Object[] object : contentIdList) {
+				long contentId = (long) object[0];
+				contentWhere.append("|| cid=="+contentId);
 			}
 			
 		
@@ -93,6 +96,11 @@ public class DBDiscover {
 			try {
 				contentList = (List<Object[]>) query.execute();
 				for (Object[] obj : contentList) {
+					for (Object[] object : contentIdList) {
+						if (object[0].equals(obj[6])) {
+							obj[1] = object[2];
+						}
+					}
 					ContentDetailsDTO contDto = getDtoForArray(obj);
 					listDto.add(contDto);
 				}
@@ -109,16 +117,16 @@ public class DBDiscover {
 		return listDto;
 	}
 	
-	public List<Object> getUserData(long userId,int emoId){
+	public List<Object[]> getUserData(long userId,int emoId){
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		String userString="userId == "+userId;
 		
 		if(emoId!=0){
 			userString=userString+" && emoId =="+emoId;
 		}
-		Query query = pm.newQuery("select DISTINCT contentId from " +EmotionTagged.class.getName()+ " where "+userString);
+		Query query = pm.newQuery("select DISTINCT contentId, emotionName, emoId from " +EmotionTagged.class.getName()+ " where "+userString);
 		
-		List<Object> followersList = (List<Object>) query.execute();
+		List<Object[]> followersList = (List<Object[]>) query.execute();
 		pm.close();
 		
 		return followersList;

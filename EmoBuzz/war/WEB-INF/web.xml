@@ -6,6 +6,26 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	
 	<servlet>
+		<servlet-name>discover</servlet-name>
+		<jsp-file>/discover.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>discover</servlet-name>
+		<url-pattern>/discover</url-pattern>
+	</servlet-mapping> 
+	
+	<servlet>
+		<servlet-name>plugin</servlet-name>
+		<jsp-file>/plugin.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>plugin</servlet-name>
+		<url-pattern>/plugin</url-pattern>
+	</servlet-mapping> 
+	
+	<servlet>
 		<servlet-name>EmotionTag</servlet-name>
 		<servlet-class>com.emobuzz.servlet.EmotionTagServlet</servlet-class>
 	</servlet>
@@ -34,6 +54,16 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/emobuzz</url-pattern>
 	</servlet-mapping>
 	
+		<filter>
+	    <filter-name>UrlRewriteFilter</filter-name>
+	    <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+	    <filter-name>UrlRewriteFilter</filter-name>
+	    <url-pattern>/*</url-pattern>
+	    <dispatcher>REQUEST</dispatcher>
+	    <dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
 	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

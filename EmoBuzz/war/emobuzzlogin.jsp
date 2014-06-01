@@ -8,6 +8,14 @@
 	<title>Login</title>
 	<link rel="stylesheet" href="/css/bootstrap.css">
 	<link rel="stylesheet" href="/css/bootstrap-responsive.css">
+	
+	<style>
+		@media (max-width:320px) {
+		    #login {
+		    	margin-top: 8px;
+		    }
+		}
+	</style>
 </head>
 <body>
 <%!
@@ -35,7 +43,10 @@
 			}
 			String url = request.getParameter("u");
 %>
-			<div class="container">&nbsp;</div>
+			<div class="container pagination-centered">
+				<h3 style="margin-bottom: 0;">Login</h3>
+			</div>
+			<hr style="margin-bottom: 18px;">
 			<div class="pagination-centered">
 				<div>
 					<form class="form-horizontal" action="/emobuzzlogin.jsp" method="get" onsubmit="return ebValidate();">
@@ -46,7 +57,7 @@
 								<input type="hidden" class="input" name="u" value="<%=url%>"/>
 
 								<input type="email" id="emailId" class="input" name="email" placeholder="Email">
-								<button class="btn btn-info" type="submit">Login</button>
+								<button class="btn btn-info" id="login" type="submit">Login</button>
 							</div>
 						</div>
 					</form>

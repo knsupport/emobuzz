@@ -1,8 +1,8 @@
-<!-- Indices written at Sun, 1 Jun 2014 02:04:25 IST -->
+<!-- Indices written at Sun, 1 Jun 2014 08:51:33 IST -->
 
 <datastore-indexes>
 
-    <!-- Used 19 times in query history -->
+    <!-- Used 10 times in query history -->
     <datastore-index kind="ContentDetails" ancestor="false" source="auto">
         <property name="majorEmoName" direction="asc"/>
         <property name="majorEmoCount" direction="desc"/>

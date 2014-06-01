@@ -64,7 +64,7 @@ public class DiscoverClient {
 		}
 		else{
 			data = dbDiscover.getUserEmotion(uid);
-			uidParam = "&u="+uid;
+			uidParam = "?u="+uid;
 		}
 		
 		
@@ -77,14 +77,15 @@ public class DiscoverClient {
 			if(id!=null){
 				String emoId = id.toString();
 				String emotionName = EmotionHandler.getEmotionName(emoId);
+				String emoUrl = "/"+emotionName;
 				
 				if(emotionName.equals(activeEmo)){
-					desktopHtml.append(emoListHtml(true, emoId, emotionName,uidParam));
-					mobHtml.append("<option value=\"/discover.jsp?e="+emotionName+uidParam+"\" selected>"+emotionName+"</option>");
+					desktopHtml.append(emoListHtml(true, emoId, emotionName,uidParam,emoUrl));
+					mobHtml.append("<option value=\"/discover"+emoUrl+uidParam+"\" selected>"+emotionName+"</option>");
 				}
 				else{
-					desktopHtml.append(emoListHtml(false, emoId, emotionName,uidParam));
-					mobHtml.append("<option value=\"/discover.jsp?e="+emotionName+uidParam+"\">"+emotionName+"</option>");
+					desktopHtml.append(emoListHtml(false, emoId, emotionName,uidParam,emoUrl));
+					mobHtml.append("<option value=\"/discover"+emoUrl+uidParam+"\">"+emotionName+"</option>");
 				}
 				
 			}
@@ -96,7 +97,7 @@ public class DiscoverClient {
 		return dataList;
 	}
 	
-	public String emoListHtml(boolean active,String emoId,String emoName,String uid){
+	public String emoListHtml(boolean active,String emoId,String emoName,String uid,String emoUrl){
 		StringBuffer dataHtml = new StringBuffer();
 		
 		String emoSrc=EmotionHandler.getEmotionImgBase64(emoId);
@@ -109,7 +110,8 @@ public class DiscoverClient {
 		}
 		dataHtml.append("<li>");
 		
-		dataHtml.append("<a class=\""+navActive+"\" href=\"/discover.jsp?e="+emoName+uid+"\"> "+emoName);
+		
+		dataHtml.append("<a class=\""+navActive+"\" href=\"/discover"+emoUrl+uid+"\"> "+emoName);
 		dataHtml.append("<img class=\"emoji small pull-right side-emo-align\" src=\""+emoSrc+"\">");
 		dataHtml.append("</a>");
 		dataHtml.append("</li>");
