@@ -1,4 +1,4 @@
-<!-- Indices written at Sun, 1 Jun 2014 11:45:16 IST -->
+<!-- Indices written at Sun, 1 Jun 2014 11:52:02 IST -->
 
 <datastore-indexes>
 
@@ -6,19 +6,6 @@
     <datastore-index kind="ContentDetails" ancestor="false" source="auto">
         <property name="majorEmoCount" direction="desc"/>
         <property name="cid" direction="desc"/>
-    </datastore-index>
-
-    <!-- Used 1 time in query history -->
-    <datastore-index kind="ContentDetails" ancestor="false" source="auto">
-        <property name="majorEmoName" direction="asc"/>
-        <property name="majorEmoCount" direction="desc"/>
-        <property name="cid" direction="desc"/>
-    </datastore-index>
-
-    <!-- Used 1 time in query history -->
-    <datastore-index kind="EmotionTagged" ancestor="false" source="auto">
-        <property name="userId" direction="asc"/>
-        <property name="emotionTagId" direction="desc"/>
     </datastore-index>
 
 </datastore-indexes>
