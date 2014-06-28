@@ -1,0 +1,3 @@
+<a id="bookmarklet" onclick="event.preventDefault();" data-placement="bottom" data-toggle="tooltip" data-original-title="Drag and Drop above button to your browser bookmark tab" style="cursor:move;padding:15px; margin-bottom: 15px; border:1px #49afcd dashed; font-size:15px; background-color: #fff;color:#49afcd;"
+href="javascript:(function(){if(document.getElementById('mye-bkletjs')){mye_cbklet();}else{var d=document; var mye_host='http://localhost:8888'; if(location.protocol=='https:'){mye_host='https://emoobuzz.appspot.com';} var ed=d.createElement('script'); ed.id='mye-bkletjs'; ed.src=mye_host+'/p-js/mye-bookmarklet.js'; d.getElementsByTagName('html')[0].appendChild(ed);}})();" 
+class="label title" >Emobuzz - Tag</a>
