@@ -98,17 +98,17 @@ DBFunctions dbFun=new DBFunctions();
 				<div class="span2" id="selEmoCont">
 				<div class="sidebar">
 					<% 
-						if (userDto != null && (uid != null && uid.trim().equals(""+userDto.getUid()))) {
-							if (userDto.getEmail().contains("alok")) {
+						/* if (userDto != null && (uid != null && uid.trim().equals(""+userDto.getUid()))) { */
+							if (uid.equals("14")) {
 							%>
 								<img src="/img/facewithgun_400x400.jpg"><br /><br />
 							<%
-							} else if (userDto.getEmail().contains("arnab")) {
+							} else if (uid.equals("17")) {
 							%>
-								<img src="/img/arnab.jpg"><br /><br />
+								<img src="/img/profile/arnab.jpg"><br /><br />
 							<%
 							}
-						}
+						
 					%>
 					<ul id="tagSideBar" class="col-nav">
 						<li>

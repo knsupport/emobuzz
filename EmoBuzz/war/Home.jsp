@@ -62,7 +62,6 @@
               <ol>
               	<li>Copy the code and save it as bookmark, with a bookmark name</li>
               	<li>Whenever you want to tag content online, type the bookmark name on address bar</li>
-              	
               </ol>
               *Bookmarklet Prototype version
               </div>
@@ -82,9 +81,10 @@
 				EmoBuzz
 			</h1>
 			<h2 class="title">
-				Discovering emotionally aspiring content of your Role models, Subject experts, Mentors.
+				<!-- Discovering emotionally aspiring content of your Role models, Subject experts, Mentors. -->
+				Discovering how your Role models, Subject experts & Mentors perceive online content emotionally.
 			</h2>
-			<div class="title">
+			<!-- <div class="title">
 				<div style="display:inline-table">
 					<img class="emo"  src="data:image/png;base64,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"></img>
 					<br>
@@ -101,7 +101,7 @@
 					<span class="emo-name">Funny</span>
 				</div>
 				
-			</div>
+			</div> -->
 		</div>
 	</div>
 <div class="content" style="background-color: #fff;">
@@ -114,12 +114,8 @@
 						<div>
 							<a href="#support" class="btn btn-large" data-toggle="modal">Android </a>
 						</div>
-						<!-- <br>
-						<div>
-							<span>Available for android, windows</span>
-						</div> -->
 					</div>
-					<div class="row text-center hidden-phone hidden-tablet visible-desktop" >
+					<!-- <div class="row text-center hidden-phone hidden-tablet visible-desktop" >
 						<div>
 							<a title="EmoBuzz Tag" 
 							href="javascript:(function(){ 	var d = document; 	var host = 'http://emoobuzz.appspot.com'; 	if (location.protocol == 'https:') { 		host = 'https://emoobuzz.appspot.com'; 	}  	var ef=d.createElement('iframe'); 	var efs=ef.style; 	ef.src=host+'/plugin.jsp?t='+encodeURIComponent(document.title)+'&u='+encodeURIComponent(window.location); 	efs.height='100%'; 	efs.width='100%'; 	efs.border='none'; 	 	var edSp=d.createElement('span'); 	edSp.onclick=function(){var e=d.getElementById('eDiv');e.parentNode.removeChild(e);}; 	edSp.innerHTML='X'; 	 	var edSps=edSp.style; 	edSps.position='absolute'; 	edSps.right='20px'; 	edSps.top='7px'; 	edSps.cursor='pointer'; 	edSps.textDecoration='underline';  	var ed=d.createElement('div'); 	ed.id='eDiv'; 	var eds=ed.style; 	eds.position='fixed'; 	eds.left='0'; 	eds.right='0'; 	eds.top='0'; 	eds.maxWidth='385px'; 	eds.height='160px'; 	eds.zIndex='1999999999'; 	eds.backgroundColor='#F7F7F7';  	ed.appendChild(ef); 	ed.appendChild(edSp); 	d.getElementsByTagName('body')[0].appendChild(ed); })();"
@@ -129,7 +125,7 @@
 						 <div>
 							<span>Drag-Drop above button to bookmark toolbar of your browser.</span>
 						</div> 
-					</div>
+					</div> -->
 					
 				<!-- </div> -->
 			</div>
