@@ -282,9 +282,9 @@ a:hover {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-.row-fluid [class *=span]:first-child {
+/* .row-fluid [class *=span]:first-child {
     margin-left: 0;
-}
+} */
 .row-fluid .controls-row [class *=span]+[class *=span] {
     margin-left: 2.127659574468085%}
 .row-fluid .span12 {
@@ -496,7 +496,7 @@ h1 {
     font-size: 38.5px;
 }
 h2 {
-    font-size: 31.5px;
+    font-size: 25px;
 }
 h3 {
     font-size: 24.5px;
@@ -4284,70 +4284,70 @@ body h1, body h2, body h3, body h4, body h5, body h6, body h7 {
   line-height: 1em;
 }
  
-.icon-emo-happy:before { content: '\e800'; } /* 'î €' */
-.icon-th:before { content: '\e83d'; } /* 'î ½' */
-.icon-emo-wink2:before { content: '\e802'; } /* 'î ‚' */
-.icon-emo-unhappy:before { content: '\e803'; } /* 'î ƒ' */
-.icon-emo-sleep:before { content: '\e804'; } /* 'î „' */
-.icon-emo-thumbsup:before { content: '\e805'; } /* 'î …' */
-.icon-emo-devil:before { content: '\e806'; } /* 'î †' */
-.icon-emo-surprised:before { content: '\e814'; } /* 'î ”' */
-.icon-emo-tongue:before { content: '\e807'; } /* 'î ‡' */
-.icon-emo-coffee:before { content: '\e808'; } /* 'î ˆ' */
-.icon-emo-sunglasses:before { content: '\e80a'; } /* 'î Š' */
-.icon-emo-displeased:before { content: '\e809'; } /* 'î ‰' */
-.icon-emo-beer:before { content: '\e80b'; } /* 'î ‹' */
-.icon-emo-grin:before { content: '\e80c'; } /* 'î Œ' */
-.icon-emo-angry:before { content: '\e80d'; } /* 'î �' */
-.icon-emo-saint:before { content: '\e80e'; } /* 'î Ž' */
-.icon-emo-cry:before { content: '\e80f'; } /* 'î �' */
-.icon-emo-shoot:before { content: '\e810'; } /* 'î �' */
-.icon-emo-squint:before { content: '\e811'; } /* 'î ‘' */
-.icon-emo-laugh:before { content: '\e812'; } /* 'î ’' */
-.icon-firefox:before { content: '\e83c'; } /* 'î ¼' */
-.icon-chrome:before { content: '\e839'; } /* 'î ¹' */
-.icon-ie:before { content: '\e83a'; } /* 'î º' */
-.icon-search:before { content: '\e83b'; } /* 'î »' */
-.icon-mail-alt:before { content: '\e82b'; } /* 'î «' */
-.icon-star:before { content: '\e819'; } /* 'î ™' */
-.icon-ok:before { content: '\e83e'; } /* 'î ¾' */
-.icon-eye:before { content: '\e83f'; } /* 'î ¿' */
-.icon-thumbs-up:before { content: '\e815'; } /* 'î •' */
-.icon-thumbs-down:before { content: '\e816'; } /* 'î –' */
-.icon-code:before { content: '\e831'; } /* 'î ±' */
-.icon-pencil:before { content: '\e844'; } /* 'î¡„' */
-.icon-bell:before { content: '\e846'; } /* 'î¡†' */
-.icon-trash:before { content: '\e830'; } /* 'î °' */
-.icon-doc-text:before { content: '\e81e'; } /* 'î ž' */
-.icon-emo-wink:before { content: '\e801'; } /* 'î �' */
-.icon-login:before { content: '\e823'; } /* 'î £' */
-.icon-logout:before { content: '\e824'; } /* 'î ¤' */
-.icon-lightbulb-1:before { content: '\e818'; } /* 'î ˜' */
-.icon-angle-left:before { content: '\e842'; } /* 'î¡‚' */
-.icon-angle-right:before { content: '\e841'; } /* 'î¡�' */
-.icon-down-big:before { content: '\e837'; } /* 'î ·' */
-.icon-up-hand:before { content: '\e834'; } /* 'î ´' */
-.icon-down-hand:before { content: '\e836'; } /* 'î ¶' */
-.icon-circle:before { content: '\e813'; } /* 'î “' */
-.icon-asterisk:before { content: '\e82a'; } /* 'î ª' */
-.icon-gift:before { content: '\e820'; } /* 'î  ' */
-.icon-gauge:before { content: '\e821'; } /* 'î ¡' */
-.icon-smile:before { content: '\e829'; } /* 'î ©' */
-.icon-linkedin-squared:before { content: '\e843'; } /* 'î¡ƒ' */
-.icon-book-open:before { content: '\e81a'; } /* 'î š' */
-.icon-share:before { content: '\e845'; } /* 'î¡…' */
-.icon-clock:before { content: '\e840'; } /* 'î¡€' */
-.icon-lock-filled:before { content: '\e82d'; } /* 'î ­' */
-.icon-lock-open-filled:before { content: '\e82c'; } /* 'î ¬' */
-.icon-cursor:before { content: '\e835'; } /* 'î µ' */
-.icon-chart-bar:before { content: '\e825'; } /* 'î ¥' */
-.icon-heart-1:before { content: '\e817'; } /* 'î —' */
-.icon-heart-broken:before { content: '\e832'; } /* 'î ²' */
-.icon-gplus:before { content: '\e838'; } /* 'î ¸' */
-.icon-google:before { content: '\e82f'; } /* 'î ¯' */
-.icon-drupal:before { content: '\e847'; } /* 'î¡‡' */
-.icon-facebook-rect:before { content: '\e828'; } /* 'î ¨' */
-.icon-tumblr-rect:before { content: '\e81c'; } /* 'î œ' */
+.icon-emo-happy:before { content: '\e800'; } /* 'Ã®Â â‚¬' */
+.icon-th:before { content: '\e83d'; } /* 'Ã®Â Â½' */
+.icon-emo-wink2:before { content: '\e802'; } /* 'Ã®Â â€š' */
+.icon-emo-unhappy:before { content: '\e803'; } /* 'Ã®Â Æ’' */
+.icon-emo-sleep:before { content: '\e804'; } /* 'Ã®Â â€ž' */
+.icon-emo-thumbsup:before { content: '\e805'; } /* 'Ã®Â â€¦' */
+.icon-emo-devil:before { content: '\e806'; } /* 'Ã®Â â€ ' */
+.icon-emo-surprised:before { content: '\e814'; } /* 'Ã®Â â€�' */
+.icon-emo-tongue:before { content: '\e807'; } /* 'Ã®Â â€¡' */
+.icon-emo-coffee:before { content: '\e808'; } /* 'Ã®Â Ë†' */
+.icon-emo-sunglasses:before { content: '\e80a'; } /* 'Ã®Â Å ' */
+.icon-emo-displeased:before { content: '\e809'; } /* 'Ã®Â â€°' */
+.icon-emo-beer:before { content: '\e80b'; } /* 'Ã®Â â€¹' */
+.icon-emo-grin:before { content: '\e80c'; } /* 'Ã®Â Å’' */
+.icon-emo-angry:before { content: '\e80d'; } /* 'Ã®Â ï¿½' */
+.icon-emo-saint:before { content: '\e80e'; } /* 'Ã®Â Å½' */
+.icon-emo-cry:before { content: '\e80f'; } /* 'Ã®Â ï¿½' */
+.icon-emo-shoot:before { content: '\e810'; } /* 'Ã®Â ï¿½' */
+.icon-emo-squint:before { content: '\e811'; } /* 'Ã®Â â€˜' */
+.icon-emo-laugh:before { content: '\e812'; } /* 'Ã®Â â€™' */
+.icon-firefox:before { content: '\e83c'; } /* 'Ã®Â Â¼' */
+.icon-chrome:before { content: '\e839'; } /* 'Ã®Â Â¹' */
+.icon-ie:before { content: '\e83a'; } /* 'Ã®Â Âº' */
+.icon-search:before { content: '\e83b'; } /* 'Ã®Â Â»' */
+.icon-mail-alt:before { content: '\e82b'; } /* 'Ã®Â Â«' */
+.icon-star:before { content: '\e819'; } /* 'Ã®Â â„¢' */
+.icon-ok:before { content: '\e83e'; } /* 'Ã®Â Â¾' */
+.icon-eye:before { content: '\e83f'; } /* 'Ã®Â Â¿' */
+.icon-thumbs-up:before { content: '\e815'; } /* 'Ã®Â â€¢' */
+.icon-thumbs-down:before { content: '\e816'; } /* 'Ã®Â â€“' */
+.icon-code:before { content: '\e831'; } /* 'Ã®Â Â±' */
+.icon-pencil:before { content: '\e844'; } /* 'Ã®Â¡â€ž' */
+.icon-bell:before { content: '\e846'; } /* 'Ã®Â¡â€ ' */
+.icon-trash:before { content: '\e830'; } /* 'Ã®Â Â°' */
+.icon-doc-text:before { content: '\e81e'; } /* 'Ã®Â Å¾' */
+.icon-emo-wink:before { content: '\e801'; } /* 'Ã®Â ï¿½' */
+.icon-login:before { content: '\e823'; } /* 'Ã®Â Â£' */
+.icon-logout:before { content: '\e824'; } /* 'Ã®Â Â¤' */
+.icon-lightbulb-1:before { content: '\e818'; } /* 'Ã®Â Ëœ' */
+.icon-angle-left:before { content: '\e842'; } /* 'Ã®Â¡â€š' */
+.icon-angle-right:before { content: '\e841'; } /* 'Ã®Â¡ï¿½' */
+.icon-down-big:before { content: '\e837'; } /* 'Ã®Â Â·' */
+.icon-up-hand:before { content: '\e834'; } /* 'Ã®Â Â´' */
+.icon-down-hand:before { content: '\e836'; } /* 'Ã®Â Â¶' */
+.icon-circle:before { content: '\e813'; } /* 'Ã®Â â€œ' */
+.icon-asterisk:before { content: '\e82a'; } /* 'Ã®Â Âª' */
+.icon-gift:before { content: '\e820'; } /* 'Ã®Â Â ' */
+.icon-gauge:before { content: '\e821'; } /* 'Ã®Â Â¡' */
+.icon-smile:before { content: '\e829'; } /* 'Ã®Â Â©' */
+.icon-linkedin-squared:before { content: '\e843'; } /* 'Ã®Â¡Æ’' */
+.icon-book-open:before { content: '\e81a'; } /* 'Ã®Â Å¡' */
+.icon-share:before { content: '\e845'; } /* 'Ã®Â¡â€¦' */
+.icon-clock:before { content: '\e840'; } /* 'Ã®Â¡â‚¬' */
+.icon-lock-filled:before { content: '\e82d'; } /* 'Ã®Â Â­' */
+.icon-lock-open-filled:before { content: '\e82c'; } /* 'Ã®Â Â¬' */
+.icon-cursor:before { content: '\e835'; } /* 'Ã®Â Âµ' */
+.icon-chart-bar:before { content: '\e825'; } /* 'Ã®Â Â¥' */
+.icon-heart-1:before { content: '\e817'; } /* 'Ã®Â â€”' */
+.icon-heart-broken:before { content: '\e832'; } /* 'Ã®Â Â²' */
+.icon-gplus:before { content: '\e838'; } /* 'Ã®Â Â¸' */
+.icon-google:before { content: '\e82f'; } /* 'Ã®Â Â¯' */
+.icon-drupal:before { content: '\e847'; } /* 'Ã®Â¡â€¡' */
+.icon-facebook-rect:before { content: '\e828'; } /* 'Ã®Â Â¨' */
+.icon-tumblr-rect:before { content: '\e81c'; } /* 'Ã®Â Å“' */
 .icon-blogger-rect:before { content: '\e81d'; } 
 .icon-star-circled:before { content: '\e827'; } 
 .icon-group:before { content: '\e81f'; } 
