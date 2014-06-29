@@ -1,8 +1,28 @@
+<%@page import="java.util.ArrayList"%>
 <%@include file="/emobuzzlogincheck.jsp"%>
 <%@page import="com.emobuzz.emotion.EmotionHandler"%>
 <%!
 	EmotionHandler emotionHandler = null;
+	ArrayList<String> alokEmoList = new ArrayList<String>();
+	ArrayList<String> arnabEmoList = new ArrayList<String>();
+	ArrayList<String> jimCarryEmoList = new ArrayList<String>();
 	public void jspInit() {
+		alokEmoList.add("1");
+		alokEmoList.add("2");
+		alokEmoList.add("6");
+		alokEmoList.add("5");
+		
+		arnabEmoList.add("1");
+		arnabEmoList.add("5");
+		arnabEmoList.add("8");
+		arnabEmoList.add("9");
+		arnabEmoList.add("10");
+		
+		jimCarryEmoList.add("5");
+		jimCarryEmoList.add("1");
+		jimCarryEmoList.add("3");
+		jimCarryEmoList.add("4");
+		
 		emotionHandler = new EmotionHandler();
 	}
 %>
@@ -73,17 +93,53 @@
 %>
 <div id="emo-holder">
 	<%
-		for (int i = 1; i <= 4; i++) {
-			String emoId = i + "";
-			String emoName = emotionHandler.getEmotionName(emoId);
-	%>
-			<div class="emo-span" id="<%=i%>" onclick="tagContent('<%=emoId%>', '<%=emoName%>')">
-				<img src="<%=emotionHandler.getEmotionImgBase64(emoId)%>">
-				<div class="emo-name"><%=emoName %></div>
-			</div>
-	<%
+		System.out.println("email is " + userDto.getEmail());
+		if (userDto.getEmail().contains("alok")) {
+			for (int i = 0; i < alokEmoList.size(); i++) {
+				String emoId = alokEmoList.get(i);
+				String emoName = emotionHandler.getEmotionName(emoId);
+		%>
+				<div class="emo-span" id="<%=i%>" onclick="tagContent('<%=emoId%>', '<%=emoName%>')">
+					<img src="<%=emotionHandler.getEmotionImgBase64(emoId)%>">
+					<div class="emo-name"><%=emoName %></div>
+				</div>
+		<%
+			}
+		} else if (userDto.getEmail().contains("arnab")) {
+			for (int i = 0; i < arnabEmoList.size(); i++) {
+				String emoId = arnabEmoList.get(i);
+				String emoName = emotionHandler.getEmotionName(emoId);
+		%>
+				<div class="emo-span" id="<%=i%>" onclick="tagContent('<%=emoId%>', '<%=emoName%>')">
+					<img src="<%=emotionHandler.getEmotionImgBase64(emoId)%>">
+					<div class="emo-name"><%=emoName %></div>
+				</div>
+		<%
+			}
+		} else if (userDto.getEmail().contains("jim")) {
+			for (int i = 0; i < jimCarryEmoList.size(); i++) {
+				String emoId = jimCarryEmoList.get(i);
+				String emoName = emotionHandler.getEmotionName(emoId);
+		%>
+				<div class="emo-span" id="<%=i%>" onclick="tagContent('<%=emoId%>', '<%=emoName%>')">
+					<img src="<%=emotionHandler.getEmotionImgBase64(emoId)%>">
+					<div class="emo-name"><%=emoName %></div>
+				</div>
+		<%
+			}
+		} else {
+			for (int i = 1; i <= 4; i++) {
+				String emoId = i + "";
+				String emoName = emotionHandler.getEmotionName(emoId);
+		%>
+				<div class="emo-span" id="<%=i%>" onclick="tagContent('<%=emoId%>', '<%=emoName%>')">
+					<img src="<%=emotionHandler.getEmotionImgBase64(emoId)%>">
+					<div class="emo-name"><%=emoName %></div>
+				</div>
+		<%
+			}
 		}
-	%>
+		%>
 	<img id="load-img" src="/img/loading.gif" style="display:none;position: absolute;right: 46%;top: 20%;">
 </div>
 <div id="emo-msg-div" style="display:none;">

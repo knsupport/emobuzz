@@ -5,5 +5,6 @@
 		/* response.sendRedirect("/emobuzzlogin.jsp"); */
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/emobuzzlogin.jsp");
 		dispatcher.forward(request, response);
+		return;
 	}
 %>

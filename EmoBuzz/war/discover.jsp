@@ -34,6 +34,9 @@ DBFunctions dbFun=new DBFunctions();
 <link href="/css/discover.css" rel="stylesheet">
 <style type="text/css"></style>
 </head>
+<%
+	UserDTO userDto = (UserDTO)session.getAttribute("login");
+%>
 <body>
 	<div tabindex="-1" class="modal hide fade" id="activityModal">
 	<div class="modal-header">
@@ -53,19 +56,16 @@ DBFunctions dbFun=new DBFunctions();
 		<button class="btn" data-dismiss="modal" type="button">Close</button>
 	</div>
 </div>
- 	
-
- 	
 	<div class="navbar">
 	<div class="navbar-inner">
-		<div style="border-bottom:1px solid #ddd;padding-bottom:3px" class="container">
-		
-			
-				<a id="logo" class="brand" href="/"><h4>
-					<strong class="red">Emo</strong>Buzz
-				</h4></a>
-			<span class="pull-right ">
-				<% UserDTO userDTO=(UserDTO)session.getAttribute("login");
+		<div style="border-bottom:1px solid #ddd;padding-bottom:3px" class="container-fluid">
+			<a id="logo" class="brand" href="/">
+						<h4>
+							<strong class="red">Emo</strong>Buzz
+						</h4>
+					</a>
+			<%-- <span class="pull-right ">
+				<%
 					if(userDTO!=null  && uid!=null && !(""+userDTO.getUid()).equals(uid)){
 						FollowerDTO followerDTO=new FollowerDTO();
 						followerDTO.setUid(userDTO.getUid());
@@ -79,7 +79,7 @@ DBFunctions dbFun=new DBFunctions();
 				
 				%>
 				
-			</span> 
+			</span>  --%>
 			
 		<!--  	<span class="pull-right ">
 				<a title="Activiy Feeds" class="btn " data-toggle="modal" href="#activityModal" id="notifyBtn"><i class="icon-bell"></i><span id="notify"></span></a>
@@ -89,8 +89,6 @@ DBFunctions dbFun=new DBFunctions();
               <!-- <li><a target="_blank" href="/">about </a></li> -->
 
             </ul> 
-              
-           
 		</div>
 	</div>
 </div>
@@ -99,6 +97,19 @@ DBFunctions dbFun=new DBFunctions();
 		
 				<div class="span2" id="selEmoCont">
 				<div class="sidebar">
+					<% 
+						if (userDto != null && (uid != null && uid.trim().equals(""+userDto.getUid()))) {
+							if (userDto.getEmail().contains("alok")) {
+							%>
+								<img src="/img/facewithgun_400x400.jpg"><br /><br />
+							<%
+							} else if (userDto.getEmail().contains("arnab")) {
+							%>
+								<img src="/img/arnab.jpg"><br /><br />
+							<%
+							}
+						}
+					%>
 					<ul id="tagSideBar" class="col-nav">
 						<li>
 							<%
@@ -110,7 +121,6 @@ DBFunctions dbFun=new DBFunctions();
 							if(emo!=null){
 								active = "";
 							}
-							
 							%>
 							<a class="emo-tag <%=active %>" emo-name="All" emo-id="0" href="/discover<%=uidParam%>">
 								All Emotions
