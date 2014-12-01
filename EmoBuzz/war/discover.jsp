@@ -98,7 +98,7 @@ DBFunctions dbFun=new DBFunctions();
 				<div class="span2" id="selEmoCont">
 				<div class="sidebar">
 					<% 
-						/* if (userDto != null && (uid != null && uid.trim().equals(""+userDto.getUid()))) { */
+	/* 					 if (userDto != null && (uid != null && uid.trim().equals(""+userDto.getUid()))) {  */
 							if (uid.equals("14")) {
 							%>
 								<img src="/img/facewithgun_400x400.jpg"><br /><br />
@@ -107,7 +107,13 @@ DBFunctions dbFun=new DBFunctions();
 							%>
 								<img src="/img/profile/arnab.jpg"><br /><br />
 							<%
+							
+							} else if (uid.equals("22")) {
+							%>
+								<img src="/img/profile/abhishek.jpg"><br /><br />
+							<%
 							}
+				/* 		 } */
 						
 					%>
 					<ul id="tagSideBar" class="col-nav">
